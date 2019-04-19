@@ -478,7 +478,7 @@ module Searchkick
 
       # pagination
       pagination_options = options[:page] || options[:limit] || options[:per_page] || options[:offset] || options[:padding]
-      if !options[:body] || pagination_options
+      if !options[:body] && pagination_options
         payload[:size] = per_page
         payload[:from] = offset
       end
